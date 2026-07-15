@@ -18,16 +18,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-provider "aws" {
-  alias  = "east2"
-  region = "us-east-2"
-}
-
 module "create-ec2" {
   source     = "./modules/create-ec2"
   instance_type = "t3.micro"
   providers = {
-    #aws = aws.east2
-    aws.east2 = aws.east2
+    aws = aws.east2
   }
 }
