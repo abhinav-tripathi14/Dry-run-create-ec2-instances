@@ -27,6 +27,6 @@ module "create-ec2" {
   source     = "./modules/create-ec2"
   instance_type = "t3.micro"
   providers = {
-    aws.east2 = aws.east2
+    aws = aws.east2
   }
 }

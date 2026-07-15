@@ -1,14 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.89.0"
-      configuration_aliases = [aws.east2]
-    }
-  }
-}
-
-
 /*
 data "aws_ami" "ubuntu" {
 
