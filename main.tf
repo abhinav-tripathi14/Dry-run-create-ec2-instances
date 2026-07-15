@@ -14,9 +14,6 @@ terraform {
 }
 
 
-
-
-
 variable "root_instance_names" {
   default = {
     instance_1 = {
