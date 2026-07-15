@@ -30,19 +30,24 @@ module "create-ec2" {
   }
 }
 
-variable "resources_to_create" {
+variable "root_instance_names" {
   default = {
-    count =2
+    instance_1 = {
+       name = "root_instance_1"
+    },
+    instance_2 = {
+      name = "root_instance_1"
+    }
   }
 }
 
 resource "aws_instance" "root_instances" {
-  for_each = var.resources_to_create
-  count = each.value.count
+  count = 2
+  for_each = var.root_instance_names
   ami           = "ami-022ba4d2b25fcb11c"
   instance_type = "t3.micro"
 
   tags = {
-    Name = "root-instance-${count.index}"
+    Name = each.value.name
   }
 }
