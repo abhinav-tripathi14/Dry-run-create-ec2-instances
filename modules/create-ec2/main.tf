@@ -1,3 +1,8 @@
+provider "aws" {
+  alias  = "east2"
+  region = "us-east-2"
+}
+
 /*
 data "aws_ami" "ubuntu" {
 
