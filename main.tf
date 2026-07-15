@@ -14,10 +14,6 @@ terraform {
 }
 
 
-provider "aws" {
-  region = "us-east-1"
-}
-
 module "create-ec2" {
   source     = "./modules/create-ec2"
   instance_type = "t3.micro"
