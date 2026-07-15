@@ -38,7 +38,7 @@ variable "resources_to_create" {
 
 resource "aws_instance" "root_instances" {
   count = var.resources_to_create.count
-  ami           = "ami-0e5497a77ef21b5ac"
+  ami           = "ami-022ba4d2b25fcb11c"
   instance_type = "t3.micro"
 
   tags = {
