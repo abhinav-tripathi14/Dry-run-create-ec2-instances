@@ -24,7 +24,7 @@ provider "aws" {
 
 module "create-ec2" {
   source     = "./modules/create-ec2"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   providers = {
     aws.east2 = aws.east2
   }
@@ -44,7 +44,7 @@ variable "root_instance_names" {
 resource "aws_instance" "root_instances" {
   for_each = var.root_instance_names
   ami           = "ami-022ba4d2b25fcb11c"
-  instance_type = "t3.micro"
+  instance_type = "t4g.micro"
 
   tags = {
     Name = each.value.name
