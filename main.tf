@@ -42,7 +42,6 @@ variable "root_instance_names" {
 }
 
 resource "aws_instance" "root_instances" {
-  count = 2
   for_each = var.root_instance_names
   ami           = "ami-022ba4d2b25fcb11c"
   instance_type = "t3.micro"
