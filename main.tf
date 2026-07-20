@@ -34,3 +34,7 @@ resource "aws_instance" "root_instances" {
     Name = each.value.name
   }
 }
+
+resource "null_resource" "test" {
+  count =2
+}
