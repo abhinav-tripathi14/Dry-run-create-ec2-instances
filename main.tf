@@ -13,6 +13,14 @@ terraform {
   }
 }
 
+module "create-ec2" {
+  source        = "./modules/create-ec2"
+  instance_type = "t3.micro"
+  providers = {
+    aws.east2 = aws.us-east-2
+  }
+}
+ 
 
 variable "root_instance_names" {
   default = {
